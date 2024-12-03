@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+
+<div class="d-flex flex-column min-vh-100">
+    <NavMenu />
+
+    <main class="flex-grow-1">
+        <div id="loading" class="text-center py-3" style="display: none;">
+            <div class="spinner-border" style="color: #18936F;" role="status"></div>
+            <div>Loading...</div>
+        </div>
+        @Body
+    </main>
+
+    <Footer />
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>

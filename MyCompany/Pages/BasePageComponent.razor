@@ -1,0 +1,15 @@
+﻿@inject IJSRuntime JSRuntime
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await JSRuntime.InvokeVoidAsync("showLoading");
+        }
+        finally
+        {
+            await JSRuntime.InvokeVoidAsync("hideLoading");
+        }
+    }
+}
