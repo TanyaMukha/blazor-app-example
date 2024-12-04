@@ -142,7 +142,3 @@ code {
         transform: rotate(360deg);
     }
 }
-
-.offcanvas {
-    transition: transform .3s ease-in-out;
-}
