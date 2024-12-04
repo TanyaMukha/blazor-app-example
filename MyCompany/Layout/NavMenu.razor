@@ -1,6 +1,8 @@
-﻿<nav class="navbar navbar-expand-lg" style="background-color: #18936F;">
+﻿@using MyCompany.Common
+
+<nav class="navbar navbar-expand-lg" style="background-color: @Constants.Colors.Primary;">
     <div class="container">
-        <a class="navbar-brand text-white" href="">MyCompany</a>
+        <a class="navbar-brand text-white" href="">@Constants.Site.CompanyName</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -13,7 +15,7 @@
                     <NavLink class="nav-link text-white" href="blog">Blog</NavLink>
                 </li>
             </ul>
-            <NavLink href="contact" class="btn" style="background-color: #F9A826; color: white;">Contact Us</NavLink>
+            <NavLink href="contact" class="btn" style="@($"background-color: {Constants.Colors.Secondary}; color: white;")">Contact Us</NavLink>
         </div>
     </div>
 </nav>

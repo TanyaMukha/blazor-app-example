@@ -1,18 +1,19 @@
 ﻿@page "/blog"
 @inherits BasePageComponent
+@using MyCompany.Common
 
-<PageTitle>MyCompany - News & Events</PageTitle>
+<PageTitle>@Constants.Site.CompanyName - News & Events</PageTitle>
 
 <div class="container my-5">
     <div class="text-center mb-5">
         <h2 class="display-5 fw-bold mb-3">Latest News & Events</h2>
-        <p class="text-muted">We offer a full cycle of website development in accordance with your wishes</p>
+        <p class="text-muted">@Constants.Site.Description</p>
     </div>
 
     <div class="row g-4">
         <div class="col-md-4">
             <div class="card h-100 shadow">
-                <img src="images/holiday.jpg" class="card-img-top" alt="Holidays">
+                <img src="images/article_background.jpg" class="card-img-top" alt="Holidays">
                 <div class="card-body">
                     <div class="d-flex justify-content-between text-muted small mb-3">
                         <span>03 Dec 2024</span>
@@ -29,7 +30,7 @@
         
         <div class="col-md-4">
             <div class="card h-100 shadow">
-                <img src="images/developer.jpg" class="card-img-top" alt="Developer">
+                <img src="images/article_background.jpg" class="card-img-top" alt="Developer">
                 <div class="card-body">
                     <div class="d-flex justify-content-between text-muted small mb-3">
                         <span>18 May 2023</span>
@@ -46,7 +47,7 @@
         
         <div class="col-md-4">
             <div class="card h-100 shadow">
-                <img src="images/design.jpg" class="card-img-top" alt="Design">
+                <img src="images/article_background.jpg" class="card-img-top" alt="Design">
                 <div class="card-body">
                     <div class="d-flex justify-content-between text-muted small mb-3">
                         <span>02 Nov 2022</span>

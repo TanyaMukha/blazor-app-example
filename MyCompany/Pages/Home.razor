@@ -1,15 +1,17 @@
 ﻿@page "/"
 @inherits BasePageComponent
+@using MyCompany.Common
 
-<PageTitle>MyCompany - Home</PageTitle>
+<PageTitle>@Constants.Site.CompanyName - Home</PageTitle>
 
 <div class="container my-5">
-    <div class="row align-items-center">
+    <div class="row g-5 justify-content-between align-items-start">
         <div class="col-md-6">
             <h1 class="display-4 fw-bold mb-4">Success IT company<br />from Ukraine<br /></h1>
             <p class="text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipiscing elit dolor posuere vel vermatis sus massa volutpat massa odio feugiat tellus, elit massa sed.</p>
+            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis, elit vel ultrices sagittis, felis lorem placerat orci, non varius nisl nunc vitae ligula. Praesent molestie diam ut massa commodo, in rutrum nulla suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eget vehicula odio, ac facilisis augue.</p>
             <div class="d-flex gap-3 mb-5">
-                <button class="btn px-4" style="background-color: #18936F; color: white;">Get started</button>
+                <button class="btn px-4" style="@($"background-color: {Constants.Colors.Primary}; color: white;")">Get started</button>
                 <button class="btn btn-outline-secondary px-4">Learn more</button>
             </div>
             <div>
@@ -23,7 +25,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <img src="images/our-team.jpg" alt="Our team" class="img-fluid rounded shadow" />
+            <img src="images/our_team.jpg" width="100%" alt="Our team" class="img-fluid rounded shadow" />
         </div>
     </div>
 </div>

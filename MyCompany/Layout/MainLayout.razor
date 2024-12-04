@@ -1,11 +1,12 @@
 ﻿@inherits LayoutComponentBase
+@using MyCompany.Common
 
 <div class="d-flex flex-column min-vh-100">
     <NavMenu />
 
     <main class="flex-grow-1">
         <div id="loading" class="text-center py-3" style="display: none;">
-            <div class="spinner-border" style="color: #18936F;" role="status"></div>
+            <div class="spinner-border" style="color: @Constants.Colors.Primary;" role="status"></div>
             <div>Loading...</div>
         </div>
         @Body
