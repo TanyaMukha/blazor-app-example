@@ -1,21 +1,60 @@
 ﻿@using MyCompany.Common
 
-<nav class="navbar navbar-expand-lg" style="background-color: @Constants.Colors.Primary;">
-    <div class="container">
-        <a class="navbar-brand text-white" href="">@Constants.Site.CompanyName</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<nav class="navbar" style="background-color: @Constants.Colors.Primary; padding: 0.5rem 1rem;">
+    <div class="container d-flex align-items-center" style="padding-right: 0;">
+        <!-- Logo -->
+        <a class="navbar-brand text-white fs-4 me-4" href="">@Constants.Site.CompanyName</a>
+
+        <button class="navbar-toggler navbar-dark d-lg-none me-0 border-0 px-2"
+                @onclick="ToggleNavMenu"
+                style="box-shadow: none;">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <NavLink class="nav-link text-white" href="" Match="NavLinkMatch.All">Home</NavLink>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link text-white" href="blog">Blog</NavLink>
-                </li>
+
+        <!-- Mobile menu -->
+        <div class="@NavMenuCssClass"
+             style="background-color: @Constants.Colors.Primary; width: 250px; position: fixed; top: 0; right: 0; height: 100vh; transform: translateX(100%); transition: transform .3s;">
+            <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="text-white mb-0">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" @onclick="ToggleNavMenu"></button>
+                </div>
+                <ul class="navbar-nav">
+                    <NavMenuItems />
+                    <li class="nav-item mt-3">
+                        <NavLink href="contact" class="btn w-100" style="@($"background-color: {Constants.Colors.Secondary}; color: white;")">
+                            Contact Us
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Desktop menu -->
+        <div class="d-none d-lg-flex flex-grow-1 justify-content-between align-items-center">
+            <ul class="navbar-nav d-flex flex-row gap-4 mb-0">
+                <NavMenuItems />
             </ul>
-            <NavLink href="contact" class="btn" style="@($"background-color: {Constants.Colors.Secondary}; color: white;")">Contact Us</NavLink>
+            <NavLink href="contact" class="btn" style="@($"background-color: {Constants.Colors.Secondary}; color: white;")">
+                Contact Us
+            </NavLink>
         </div>
     </div>
 </nav>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "d-lg-none" : "d-lg-none show";
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+
+<style>
+    .show {
+        transform: translateX(0) !important;
+    }
+</style>
